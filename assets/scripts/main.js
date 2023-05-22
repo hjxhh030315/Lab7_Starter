@@ -54,19 +54,19 @@ function initializeServiceWorker() {
             console.log(window.location.pathname);
             navigator.serviceWorker.register("./sw.js", {
                 scope: "./",
+                // B4. TODO - Once the service worker has been successfully registered, console
+                //            log that it was successful.
             }).then((resolve) => {
                 console.log("service worker registered successfully");
                 console.log("Resolve object: " + resolve);
+                // B5. TODO - In the event that the service worker registration fails, console
+                //            log that it has failed.
             }, (reject) => {
                 console.log("service worker registration failed");
                 console.log("Reject object: " + reject);
             });
         });
     }
-    // B4. TODO - Once the service worker has been successfully registered, console
-    //            log that it was successful.
-    // B5. TODO - In the event that the service worker registration fails, console
-    //            log that it has failed.
     // STEPS B6 ONWARDS WILL BE IN /sw.js
 }
 
